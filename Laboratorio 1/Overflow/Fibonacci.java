@@ -1,7 +1,24 @@
 import java.math.BigInteger;
 
 public class Main {
-    private static BigInteger Overflow_BI,a,b,i;
+        private static BigInteger Overflow_BI,a,b,i;
+    
+    static byte Fibo_Byte(byte n){
+        byte i;
+        byte a=0;
+        byte b=1;
+        byte result;
+        if (n==0){
+            result=0;
+        }else{
+            for (i=1;i<n;i++){
+                b= (byte) (a+b);
+                a= (byte) (b-a);
+            }
+            result=b;
+        }
+        return result;
+    }
 
     static short Fibo_Short(short n){
         short i;
@@ -76,16 +93,17 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-        short Overflow_short=85; // Este es el overflow de short (no estoy 100% seguro
-        int Overflow_int=47;// overflow de int
-        long Overflow_long=93;// overflow de long
+        byte Overflow_byte=12;//Overflow de byte
+        short Overflow_short=24; //Overflow de short
+        int Overflow_int=47;//Overflow de int
+        long Overflow_long=93;//Overflow de long
         Overflow_BI=new BigInteger("3000000");
         // y ya que 3 millones no fue un overflow, asumo que BigInteger
         //no tiene overflow
-
-
-
+        
+        
+        
+        System.out.println(Fibo_Byte(Overflow_byte));
         System.out.println(Fibo_Short(Overflow_short));
         System.out.println(Fibo_Int(Overflow_int));
         System.out.println(Fibo_Long(Overflow_long));
