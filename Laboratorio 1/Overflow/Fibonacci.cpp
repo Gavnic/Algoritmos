@@ -55,7 +55,8 @@ long long Fibo_long_long(long long n){
 }
 
 int main(){
-    short Overflow_short=85;
+    // Los overflow de cada tipo de dato
+    short Overflow_short=24;
     int Overflow_int=47;
     long Overflow_long=93;
     long long Overflow_long_long=93;
